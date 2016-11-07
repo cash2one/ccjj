@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link href="{dede:global.cfg_templets_skin/}/style/dedecms.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="{dede:global.cfg_templets_skin/}/style/page.css" rel="stylesheet" media="screen" type="text/css" />
+</head>
+<body class="channel">
+{dede:include filename="head.htm"/}
+<!-- /header -->
+
+<div class="wrap">
+  <img src="{dede:global.cfg_templets_skin/}/images/{dede:field name='typeid' function="GetTopTypename(@me)" /}.jpg" alt="Image-1" width="100%" height="auto">
+  <div class="container1">
+    <div class="place">
+        <strong>当前位置:</strong> {dede:field name='position'/}
+      </div>
+    <div class="clearfix">
+    <div class="sidebar">
+      <h1>{dede:field name='typeid' function="GetTopTypename(@me)" /}
+</h1>
+        {dede:channel type='son' currentstyle="<li class='hover'><a href='~typelink~'>~typename~</a></li>"}
+      <li>
+        <a href='[field:typeurl/]'>[field:typename/]</a>
+      </li>{/dede:channel}
+    </div>
+    <div class="content">
+      
+      <div class="contentbox">
+{dede:field.content/}
+
+
+</div>
+    </div>
+    </div>
+  </div> 
+</div>
+{dede:include filename="footer.htm"/}
+<!-- /footer -->
+</body>
+</html>

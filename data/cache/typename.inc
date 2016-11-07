@@ -1,0 +1,29 @@
+<?php
+$typeArr[1] = '关于我们';
+$typeArr[2] = '公司介绍';
+$typeArr[3] = '战略目标';
+$typeArr[4] = '组织构架';
+$typeArr[5] = '企业文化';
+$typeArr[6] = '新闻动态';
+$typeArr[7] = '政策新闻';
+$typeArr[24] = '产品资讯';
+$typeArr[9] = '业务领域';
+$typeArr[10] = '文化基金';
+$typeArr[11] = '产业基金';
+$typeArr[12] = '不动产基金';
+$typeArr[13] = '资讯中心';
+$typeArr[14] = '传承资讯';
+$typeArr[16] = '精英团队';
+$typeArr[17] = '联系我们';
+$typeArr[18] = '招贤纳士';
+$typeArr[26] = '管理团队';
+$typeArr[22] = '首页BANNER图';
+$typeArr[23] = '尊贵服务';
+$typeArr[32] = '理财团队';
+$typeArr[25] = '行业动态';
+$typeArr[27] = '投资团队';
+$typeArr[28] = '风控团队';
+$typeArr[29] = '合作流程';
+$typeArr[30] = '投资者须知';
+$typeArr[31] = '联系我们';
+?>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<!-- <meta name="viewport" content="width=device-width,user-scalable=yes"> -->
+
+<title>{dede:global.cfg_webname/}</title>
+<meta name="description" content="{dede:global.cfg_description/}" />
+<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+<link href="{dede:global.cfg_templets_skin/}/style/dedecms.css" rel="stylesheet" media="screen" type="text/css" />
+<script src="{dede:global.cfg_templets_skin/}/js/jquery-v1.10.2.js"></script> 
+<script src="//code.jquery.com/jquery-latest.min.js"></script>
+ <script src="{dede:global.cfg_templets_skin/}/js/gundong.js"></script>
+<script src="{dede:global.cfg_templets_skin/}/js/jquery.easing.js"></script> 
+<script src="http://cdn.bootcss.com/jQuery.dotdotdot/1.7.4/jquery.dotdotdot.js"></script>
+<script src="{dede:global.cfg_templets_skin/}/js/unslider.min.js"></script>
+<script type="text/javascript">
+$(function() {
+    unslider = $('.banner').unslider({
+      speed: 500,        //  切换的速度
+      delay: 3000,        //  切换的速度
+      keys: true,        //  是否启用左右按钮控制slider切换
+      fluid: false,       // 是否每次在容器大小改变的时候，修正slider的大小
+      pause:true,        //鼠标以上去是否暂停播放
+      starting:function(){    //每次开始切换时回叫方法
+        console.log("starting");
+      },
+      complete:function(){     //每次完成切换时回叫方法
+        console.log("complete");
+      },
+      arrows: true,        //  是否显示左右箭头，用于slider切换
+      dots: true          //  是否显示白色圆点，用于slider切换
+    });
+    $("#clamp,#clamp1,#clamp2,#news1").dotdotdot({
+    //  configuration goes here
+  });
+ });
+ 
+
+</script> 
+</head>
+<body>
+{dede:include filename="head.htm"/}
+
+
+
+  <div class="banner">
+   <ul>
+   {dede:arclist  typeid='22' row='5'}
+        <li style="background-image: url('[field:litpic/]');"> 
+        <a href="[field:description/]" ></a>    
+        </li>
+      {/dede:arclist}
+     </ul>
+     
+ </div>  
+<!-- /jquery幻灯片 -->
+<div class="main">
+  <div class="container white">
+    <div class="titleh1">
+        <b></b>
+        <span>业务领域<br />Our Business</span>
+        <b></b>
+    </div>
+    <div class="full-length">
+      <ul>
+
+        <li>
+          <div class="port-1 effect-1 border_shade">
+            <div class="image-box">
+              <img src="{dede:global.cfg_templets_skin/}/images/不动产投资基金.jpg" alt="Image-1">
+            </div>
+            <div class="text-desc">
+              <h3>不动产基金</h3>
+              <p class="ptest">不动产基金一般指专注于房地产领域的私募股权基金，是一种面向私有房地产资金进行并购或开发的投资模式。房地产基金的兴起与发展不仅为广大投资者提供一种金融投资工具，也为房地产产业的发展提供了高效的融资渠道，成为连接金融和房地产两大行业的纽带。</p>
+              <a href="/plus/list.php?tid=12" class="btn">了解更多</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="port-1 effect-2 border_shade">
+            <div class="image-box">
+              <img src="{dede:global.cfg_templets_skin/}/images/产业投资基金.jpg" alt="Image-2">
+            </div>
+            <div class="text-desc">
+              <h3>产业基金</h3>
+              <p class="ptest">即产业链金融，也称产业投资基金，产业投资基金是一个大类概念，国外通常称为风险投资基金和私募股权投资基金，是一种利益共享、风险共担的集合投资制度。一般是指向具有高速增长潜力的潜在的未来上市企业进行股权或准股权进行投资，并参与企业的经营管理。</p>
+              <a href="/plus/list.php?tid=11" class="btn">了解更多</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="port-1 effect-3 border_shade">
+            <div class="image-box">
+              <img src="{dede:global.cfg_templets_skin/}/images/文化投资基金.jpg" alt="Image-3">
+            </div>
+            <div class="text-desc">
+              <h3>股权基金</h3>
+              <p class="ptest">在中国通常称为私募股权投资，依国外相关研究机构定义，是指通过私募形式对私有企业，即非上市企业进行的权益性投资，在交易实施过程中附带考虑了将来的退出机制，即通过上市、并购或管理层回购等方式，出售持股获利。</p>
+              <a href="/plus/list.php?tid=10" class="btn">了解更多</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="container">
+    <div class="titleh1">
+        <b></b>
+        <span>关于我们<br />About Us</span>
+        <b></b>
+    </div>
+    <div class="aboutus">
+      <div class="introduce">
+        <p class="em13">传承基金</p>
+        <p>深圳市传承基金管理有限公司成立于2012年，是一家专业的私募基金管理公司，依托于集团的雄厚实力，以及集团在地产、金融领域多年积累的优质资源及投资经验，汇集了一批来自银行、信托、私募、证券等领域的业内精英共同组建管理团队执行基金事务，通过严格的风险控制体系和手段，向资产管理领域纵横发展。</p>
+      </div>
+      <ul>
+        <li>
+          <div class="contentus imgbg01"></div>
+          <p class="em13">公司简介<br />Company Profile</p>
+          <div class="contentclamp" id="clamp">深圳市传承基金管理有限公司成立于2012年，是一家专业的私募基金管理公司，依托于集团的雄厚实力，金融领域多年积累的优质资源及投资经验，汇集了一批来自银行、信托、私募</div>
+          <a href="/plus/list.php?tid=2" class="more">MORE</a>
+        </li>
+        <li>
+          <div class="contentus imgbg02"></div>
+          <p class="em13">管理团队<br />Management Team </p>
+          <div class="contentclamp" id="clamp1">传承基金核心管理团队源自自银行、信托、私募、证券等领域具有丰富投融资管理、资本运作及项目管理经验的专业人士，以及来自于知名金融机构具有丰富基金管理经验和熟悉金融产品运作的业界精英。</div>
+          <a href="/plus/list.php?tid=26" class="more">MORE</a>
+        </li>
+        <li>
+          <div class="contentus imgbg03"></div>
+          <p class="em13">企业文化<br />Corporate Culture</p>
+          <p class="contentclamp" id="clamp2">核心价值观：诚信、独立、客观、专业。
+企业使命：诚信天下，稳健投资，纵横发展，财富自由。
+企业愿景：为投资人和融资方搭建桥梁，全力打造中国最具公信力和价值创造力的私募基金投资平台。
+经营理念：价值发现，稳健投资，立足深圳，特色发展。
+企业目标：为客户资产的保值、增值提供专业服务。
+企业宗旨：专业高效 回报信任
+行为准则：正直自律、合法经营、合规操作、合作公正、合格标准、合理布局。</p>
+          <a href="/plus/list.php?tid=5" class="more">MORE</a>
+        </li>
+      </ul> 
+    </div>
+  </div>
+  <div class="container white">
+    <div class="titleh1">
+        <b></b>
+        <span>投资案例<br />Investment Case</span>
+        <b></b>
+    </div>
+     <div class="case">
+      <!-- <ul class="ib2_nav fr">
+        <li class="fl on">所有案例</li>
+        <li class="fl">不动产基金</li>
+        <li class="fl">文化基金</li>
+        <li class="fl">产业基金</li>
+      </ul> -->
+      <div class="ib2_move">
+        <div class="ib2_list_box">
+          <ul class="ib2_list clearfix" style="display: block;">
+          {dede:arclist  titlelen='35' typeid='34' limit='0,15'}
+            <li class="fl">
+              <a href="[field:arcurl/]">
+                <div class="top">
+                  <img src="[field:litpic/]" width="260px" height="214px">
+                </div>
+                <div class="bottom">
+                  <h2>[field:title/]</h2>
+                 
+                </div>
+              </a>
+            </li>
+           {/dede:arclist}                                           
+          </ul>
+         <!--  <ul class="ib2_list clearfix">
+            {dede:arclist addfields='fundsize,income,deadline,state' titlelen='35' typeid='34' limit='0,15'}
+            <li class="fl">
+              <a href="[field:arcurl/]">
+                <div class="top">
+                  <img src="[field:litpic/]" width="260px" height="214px">
+                </div>
+                <div class="bottom">
+                  <h2>[field:shorttitle/]</h2>
+                </div>
+              </a>
+            </li>
+           {/dede:arclist}       
+          </ul>
+           <ul class="ib2_list clearfix">
+            {dede:arclist addfields='fundsize,income,deadline,state' titlelen='35' typeid='10' limit='0,15'}
+            <li class="fl">
+              <a href="[field:arcurl/]">
+                <div class="top">
+                  <img src="[field:litpic/]" width="260px" height="214px">
+                </div>
+                <div class="bottom">
+                  <h2>[field:shorttitle/]</h2>
+                </div>
+              </a>
+            </li>         
+           {/dede:arclist}    
+          </ul>
+           <ul class="ib2_list clearfix">
+            {dede:arclist addfields='fundsize,income,deadline,state' titlelen='35' typeid='11' limit='0,15'}
+            <li class="fl">
+              <a href="[field:arcurl/]">
+                <div class="top">
+                  <img src="[field:litpic/]" width="260px" height="214px">
+                </div>
+                <div class="bottom">
+                  <h2>[field:shorttitle/]</h2>
+                </div>
+              </a>
+            </li>         
+           {/dede:arclist}   
+          </ul> -->
+        </div>
+      </div>   
+      <div class="slide_btn">
+        <a href="#" class="left_btn" id="idx_left_btn"></a>
+        <a href="#" class="right_btn" id="idx_right_btn"></a>
+      </div>
+    </div>
+  </div> 
+  <div class="container">
+    <div class="titleh1">
+        <b></b>
+        <span>新闻资讯<br />News Information</span>
+        <b></b>
+    </div>
+    <div class="news">
+      <ul class="newscontent">
+        <li>
+          <p class="em13">行业动态<br />Vocation News</p>
+          <div class="newshot">
+          {dede:arclist typeid='25' titlelen='50' limit='0,1'}
+            <img src="[field:litpic/]">
+            <div class="head">[field:pubdate function="MyDate('Y',@me)" /]<br />[field:pubdate function="MyDate('m.d',@me)" /]</div>
+            <p class="title">[field:title/]</p>
+            <div class="text" id="news1">[field:description/]</div>
+            <a class="more" href="/plus/list.php?tid=25">MORE</a>
+            {/dede:arclist}
+          </div>
+        </li>
+        <li>
+        <p class="em13">公司要闻<br />Company News</p>
+          
+          <div class="newshot">
+          {dede:arclist typeid='14' titlelen='50' limit='0,1'}
+            <img src="[field:litpic/]">
+            <div class="head">[field:pubdate function="MyDate('Y',@me)" /]<br />[field:pubdate function="MyDate('m.d',@me)" /]</div>
+            <p class="title">[field:title/]</p>
+            <div class="text" id="news1">[field:description/]</div>
+            <a class="more" href="/plus/list.php?tid=14">MORE</a>
+            {/dede:arclist}
+          </div>
+        </li>
+        <li>
+        <p class="em13">项目资讯<br />Program Info</p>
+          
+          <div class="newshot">
+          {dede:arclist typeid='24' titlelen='50' limit='0,1'}
+            <img src="[field:litpic/]">
+            <div class="head">[field:pubdate function="MyDate('Y',@me)" /]<br />[field:pubdate function="MyDate('m.d',@me)" /]</div>
+            <p class="title">[field:title/]</p>
+            <div class="text" id="news1">[field:description/]</div>
+            <a class="more" href="/plus/list.php?tid=24">MORE</a>
+            {/dede:arclist}
+          </div>
+        </li>
+      </ul>
+    
+    
+     
+    </div>
+  </div>
+</div>
+
+<link href="{dede:global.cfg_templets_skin/}/style/tishitankuang.css?" rel="stylesheet"
+    type="text/css" />
+<div class="tankuang_xinzeng" id="tstk" style="display: none">
+    <div class="diceng">
+        <div class="tankuang_xinzeng_1">
+            
+            <div class="tk_right">
+                <div class="tankuang_xinzeng_1_top">
+                    
+                        <img src="{dede:global.cfg_templets_skin/}/images/合格投资者认定.png" />
+                </div>
+                <div class="tankuang_xinzeng_2">
+                    <div class="tk_xz_left">
+                       <p> 基金投资具有一定风险，根据《中华人民共和国证券法》、《中华人民共和国证券投资基金法》、《私募投资基金监督管理暂行办法》、《私募投资基金信息披露管理办法》、《私募投资基金募集行为管理办法》等相关法律法规规定，在继续浏览本公司网站前，请您确认您或您所代表的机构是一名“合格投资者”。“合格投资者”指根据任何国家和地区的证券和投资法规所规定的有资格投资于私募投资基金的专业投资者。根据我国《私募投资基金监督管理暂行办法》的规定，合格投资者的标准如下：<br />
+一、具备相应风险识别能力和风险承担能力，投资于单只私募基金的金额不低于100万元且符合下列相关标准的单位和个人：<br />
+1、净资产不低于1000万元的单位；<br />
+2、个人金融资产不低于300万元或者最近三年个人年均收入不低于50万元。（前款所称金融资产包括银行存款、股票、债券、基金份额、资产管理计划、银行理财产品、信托计划、保险产品、期货权益等。）<br />
+二、下列投资者视为合格投资者：<br />
+1、社会保障基金、企业年金、慈善基金；<br />
+2、依法设立并受国务院金融监督管理机构监管的投资计划；<br />
+3、投资于所管理私募基金的私募基金管理人及其从业人员；<br />
+4、中国证监会规定的其他投资者。<br />
+如果您进入、访问或使用本网站及其任何网页，即表明您已同意接受以下条款与条件的约束。下列条款与条件可能会做出变更。如您不同意下列条款与条件，请勿进入访问或使用本网站或其他信心“本网站”指深圳市传承基金管理有限公司（以下简称“本公司”）所有并发布的本网站（www.ccfmcy.com）及其网站内包含的所有信息及材料。<br />
+本网站所载的各种信息和数据等仅供参考，并不构成广告或销售要约，或买入任何物业、基金或其它投资工具的建议。投资者应仔细审阅相关金融产品的合同文件等以了解其风险因素，或寻求专业的投资顾问的建议。<br />
+
+投资产品净值可能会有较大的波动，并可能在短时间內大幅下跌，并造成投资者损失部分或全部投资金额。您应确保有关投资产品适合您的需要。如有怀疑，请咨询按中国内地法规注册的专业分析师的意见，并要求其确认有关投资产品适合并符合您的投资目标。<br />
+
+投资产品的价格及其收益存在涨跌变动，而过往的产品业绩数据并不预示其未来的表现，投资者不应依赖本网站所提供的数据做出投资决策，否则由投资者自行承担所有风险。</p>
+                        <h2 class="tk_xz_left_an" onclick="innerview()">
+                            我知道了</h2>
+                        <div class="tk_xz_left_inp">
+                            <input type="checkbox" autocomplete="off" checked="checked" id="remember" />记住我的选择 不再提示
+                        </div>
+                    </div>
+                    <div style="clear: both;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="beijing">
+    </div>
+</div>
+
+<script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/tishitankuang.js"></script>
+
+<!-- /flink -->
+
+{dede:include filename="footer.htm"/}
+<!-- /footer -->
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link href="{dede:global.cfg_templets_skin/}/style/dedecms.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="{dede:global.cfg_templets_skin/}/style/page.css" rel="stylesheet" media="screen" type="text/css" />
+</head>
+<body>
+{dede:include filename="head.htm"/}
+<!-- /header -->
+ <img src="{dede:global.cfg_templets_skin/}/images/{dede:field name='typeid' function="GetTopTypename(@me)" /}.jpg" alt="Image-1" width="100%" height="auto">
+<div class="wrap">
+	<div class="container1">
+		<div class="place">
+        <strong>当前位置:</strong> {dede:field name='position'/}
+      </div>
+      <div class="clearfix">
+      <div class="sidebar">
+      <h1>{dede:field name='typeid' function="GetTopTypename(@me)" /}
+</h1>
+        {dede:channel type='son' currentstyle="<li class='hover'><a href='~typelink~'>~typename~</a></li>"}
+      <li>
+        <a href='[field:typeurl/]'>[field:typename/]</a>
+      </li>{/dede:channel}
+    </div>
+    <div class="content">
+      
+      
+      
+    <div class="listfund">
+    <div style="border:1px dashed #ccc;margin-bottom:20px;padding:10px;">
+    <h1>不动产基金</h1>
+    <p >&nbsp; &nbsp; 不动产基金即私募股权房地产投资基金一般指专注于房地产领域的私募股权基金，是一种面向私有房地产资金进行并购或开发的投资模式。最早起源于美国，20世纪60年代为解决房地产投资专业性要求高、资金需求大、地域性强、流动性差等不利因素，美国出现了由房地产专业机构管理的房地产投资信托基金，随着房地产基金运作模式的不断成熟和运作规模的不断扩大，当前房地产基金几乎已经渗入美国每一个大中城市的房地产经营活动中。房地产基金的兴起与发展不仅为广大投资者提供一种金融投资工具，也为房地产产业的发展提供了高效的融资渠道，成为连接金融和房地产两大行业的纽带。<br />
+    &nbsp; &nbsp; 传承基金旗下所管理的不动产基金类属于有限合伙型房地产基金，有限合伙将合伙人分成两类，即有限合伙人和普通合伙人。对于有限合伙公司而言，前者是企业的所有者，后者是企业的经营者。有限合伙型房地产基金的目的是获取能产生最大现金流的房地产，可能采取用现金购买收益型房地产的策略。投资者的目的将决定有限合伙型房地产基金投资目的以及相应的策略。<br />
+    &nbsp; &nbsp; 有限合伙制房地产投资基金投资方向严格限定于房地产有关的证券(包括房地产上市公司的股票、房地产依托债券、住房抵押贷款债券等)和房地产资产等方面。房地产投资基金直接投资的房地产资产一般是能产生较稳定现金流的高级公寓、写字楼、仓库、厂房及商业用房等物业。
+</p>
+</div>
+  <h1>产品列表</h1>
+  
+    <ul>
+      <li class="title clearfix"><span class="head">基金名称</span><span>金额</span><span>预期年利率</span><span>期限</span><span>状态</span></li>
+       {dede:list pagesize='10'}
+      <li class="clearfix"><span class="head"><a href="[field:arcurl/]">[field:title/]</a></span><span>[field:fundsize/]</span><span>[field:income/]</span><span>[field:deadline/]</span><span class="status">[field:state/]</span></li>
+       {/dede:list}
+    </ul>
+  
+</div>
+{dede:pagelist listsize='3' listitem='index pre pageno next end option'/} 
+      
+    </div>
+    </div>
+	</div>
+</div>		
+
+{dede:include filename="footer.htm"/}
+<!-- /footer -->
+
+</body>
+</html>

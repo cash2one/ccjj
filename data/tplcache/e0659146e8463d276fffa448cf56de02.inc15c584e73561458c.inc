@@ -1,0 +1,10 @@
+<?php
+$z[0]=Array("field","",27,55);
+$z[0][4]['name']="typeurl";
+$z[1]=Array("field","",57,85);
+$z[1][4]['name']="content";
+$z[2]=Array("field","",113,200);
+$z[2][4]['name']="typeurl";
+$z[2][4]['function']="htmlspecialchars(cn_substr(Html2text(@me),450))";
+
+?>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link href="{dede:global.cfg_templets_skin/}/style/dedecms.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="{dede:global.cfg_templets_skin/}/style/page.css" rel="stylesheet" media="screen" type="text/css" />
+<script src="{dede:global.cfg_templets_skin/}/js/jquery-v1.10.2.js"></script> 
+
+</head>
+<body class="channel">
+{dede:include filename="head.htm"/}
+<!-- /header -->
+
+<div class="wrap">
+
+  <img src="{dede:global.cfg_templets_skin/}/images/{dede:field name='typeid' function="GetTopTypename(@me)" /}.jpg" alt="Image-1" width="100%" height="auto">
+  <div class="wihte">
+  <div class="service">
+  <div class="case-content">
+
+  <div class="case-item">
+    <div class="ih-item circle effect1">
+      <a id="pic_fun_adm" href="#">
+        <div class="spinner"></div>
+        <div class="img"><img src="{dede:global.cfg_templets_skin/}/images/安全.png" >
+        <h3>资金安全</h3>
+            <p>资金托管<br />劣后级安全垫</p></div>
+      </a>
+    </div>
+  </div>
+  <div class="case-item">
+    <div class="ih-item circle effect1">
+      <a id="pic_fun_crm" href="#">
+        <div class="spinner"></div>
+        <div class="img"><img src="{dede:global.cfg_templets_skin/}/images/收益.png" >
+        <h3>基金收益</h3>
+        <p>稳健收益<br />深圳优质地段物业</p></div>
+      </a>
+    </div>
+  </div>
+  <div class="case-item">
+    <div class="ih-item circle effect1">
+      <a id="pic_fun_project" href="#">
+        <div class="spinner"></div>
+        <div class="img"><img src="{dede:global.cfg_templets_skin/}/images/服务.png" >
+        <h3>专业服务</h3>
+            <p>专业理财团队<br />贴心客户服务</p></div>
+      </a>
+    </div>
+  </div>   
+</div>
+<div class="fundsafety" style="display:block;">有限合伙企业持有物业产权；劣后级资金安全垫；金融机构资金托管</div>
+<div class="fundsafety">优质地段物业，专业团队精细核算稳健收益；专注于收益型物业操盘
+
+</div>
+<div class="fundsafety">传承十年匠心团队打造，汇集金融及房地产各界精英，诚挚、专心、专业的高端优质服务。
+</div>
+</div>
+</div>
+<div class="fund">
+  <img src="{dede:global.cfg_templets_skin/}/images/img-3.jpg" alt="">
+  <div class="fundintro">
+    <p>截至目前为止传承基金累计管理金额已过18亿，累计预期收益1亿8千万。</p>
+    
+      <p class="porgress"><span>管理金额：</span><span>1000万</span><span>3000万</span><span>5000万</span><span>1亿</span><span>3亿</span><span>6亿</span><span>12亿</span><span>16亿</span><span>23亿</span><span>40亿</span></p>
+      <div class="porgressbar"><span style="width: 520px;"></span></div>
+      <p class="porgress"><span>预期收益：</span><span>120万</span><span>360万</span><span>600万</span><span>1200万</span><span>3600万</span><span>1.44亿</span><span>1.62亿</span><span>2.76亿</span><span>4.8亿</span></p>
+    <p>传承基金以其专业性和稳定性，在市场上的表现也会越来越强大。</p>
+  </div>
+</div>
+<div class="fund">
+   <p class="labelleft">产品推荐</p>
+  <div class="porduct">
+    <ul>
+      <li class="title clearfix"><span class="head">理财产品</span><span>金额</span><span>预期年利率</span><span>期限</span><span style="width: 100px;">状态</span></li>
+      {dede:arclist addfields='fundsize,income,deadline,state' titlelen='50' channelid='6' limit='0,6'}
+      <li class="clearfix"><span class="head"><a href="[field:arcurl/]">[field:title/]</a></span><span>[field:fundsize/]</span><span>[field:income/]</span><span>[field:deadline/]</span><span class="status">[field:state/]</span></li>
+      {/dede:arclist}
+
+    </ul>
+  </div>
+</div>
+<div style="background: #f1f1f1;height: 10px;">
+</div>
+<script type="text/javascript">
+  $(function(){
+    var oCardBox = $(".service"),
+    oCat_tab = $(".service .case-content .case-item"),
+    aTabArrow = $(".cardBox .cat_tab .tab-arrow"),
+    aContentBox = $(".service .fundsafety");
+    
+  oCat_tab.hover(function(){
+    var _this = $(this);
+    var hpWidth = (_this.index()) * _this.width();
+    aTabArrow.animate({left:hpWidth},100);
+    
+    oCat_tab.removeClass("active");
+    _this.addClass("active");
+    
+    aContentBox.css('display','none');
+    aContentBox.eq(_this.index()).css('display','block');
+  })
+})
+</script>
+{dede:include filename="footer.htm"/}
+<!-- /footer -->
+</body>
+</html>

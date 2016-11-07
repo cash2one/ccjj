@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link href="{dede:global.cfg_templets_skin/}/style/dedecms.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="{dede:global.cfg_templets_skin/}/style/page.css" rel="stylesheet" media="screen" type="text/css" />
+<script src="{dede:global.cfg_templets_skin/}/js/jquery-v1.10.2.js"></script> 
+</head>
+<body class="channel">
+{dede:include filename="head.htm"/}
+<!-- /header -->
+
+<div class="wrap">
+  <img src="{dede:global.cfg_templets_skin/}/images/{dede:field name='typeid' function="GetTopTypename(@me)" /}.jpg" alt="Image-1" width="100%" height="auto">
+  <div class="container1">
+    <div class="place">
+        <strong>当前位置:</strong> {dede:field name='position'/}
+      </div>
+    <div class="clearfix">
+    <div class="sidebar">
+      <h1>{dede:field name='typeid' function="GetTopTypename(@me)" /}
+</h1>
+        {dede:channel type='son' currentstyle="<li class='hover'><a href='~typelink~'>~typename~</a></li>"}
+      <li>
+        <a href='[field:typeurl/]'>[field:typename/]</a>
+      </li>{/dede:channel}
+    </div>
+    <div class="content">
+      
+      <div class="contentbox">
+{dede:field.content/}
+<div>
+<p><strong>基本福利：</strong><br />
+
+1.   五险一金：入职当月即购买五险一金<br />
+
+2.   全勤奖金：当月全勤出勤享有月度全勤奖金<br />
+
+3.   年终奖励：年底发放丰厚年终奖金<br />
+
+4.   带薪假期：带薪年假、病假、丧假、产假、生日假、产检假、陪产假等及其他国家法定规定的节假日<br />
+
+5.   健康体检：每年一次免费健康体检，转正员工享有集团齿科优越福利<br />
+
+6.   国内外旅游：不定期的月度/季度/年度国内外旅游机会<br />
+
+7.   生日庆贺：员工生日举办生日庆贺、生日休假半天<br />
+
+8.   各类津贴：优秀人才奖、内荐奖金、工龄奖金等多项津贴<br />
+
+9.   慈善资助：内部员工可优先申请加入传承爱心基金会成员资格，享有更多慈善资助<br />
+
+10.  其它福利：可口下午茶、月度聚餐；拓展、踏青、烧烤、羽毛球赛等各类户外活动<br />
+
+ 
+
+工作时间：5天7小时（早9晚5点30分，中午休息一个半小时，周末双休）<br />
+</p><br />
+  <p>这些都是你的：同行业最具竞争力的薪酬+高额提成+带薪年休假+多项补助+五险一金+定期娱乐活动+五天7小时+公司产品优先认购等.
+千里马福利：试用期满，补贴500—1000元“优秀人才奖”并享受试用期内推荐人才签单千分之二的提成!
+<br />
+欢迎感兴趣的朋友投递和推荐简历至<a href="mailto:hr@szcccf.com">hr@szcccf.com </a>。<br />
+联系电话：0755-22941421 &nbsp; 左小姐<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;0755-22941400 &nbsp; 前 台<br />
+QQ群：263993098传承金融英才俱乐部</p>
+</div>
+<script type="text/javascript">
+        // JavaScript Document
+$(function(){
+
+  //modal框--关闭
+  $(".modal-close").bind("click",function(){
+    $(this).parents(".modal").css({"opacity":"0","display":"none"});
+  })
+  
+  //加入我们-展开
+  $(".jl-title").bind("click",function(){
+    if(!$(this).hasClass("cur")){
+      $(this).addClass("cur");
+      $(this).siblings(".jl-block").fadeIn(300);
+    }else{
+      $(this).removeClass("cur");
+      $(this).siblings(".jl-block").hide();
+    }
+  })
+
+
+})
+
+//modal框显示 obj=需显示的modal框
+function modal(obj){
+  var $obj = $(obj);
+  var $modalCon = $obj.find(".modal-container");
+  $obj.css({"display":"block"});
+  var height = $modalCon.height();
+  $modalCon.css("top",($(window).height() - height)/2);
+  $obj.css({"opacity":"1"});
+}
+
+    </script>
+</div>
+    </div>
+    </div>
+  </div> 
+</div>
+{dede:include filename="footer.htm"/}
+<!-- /footer -->
+</body>
+</html>

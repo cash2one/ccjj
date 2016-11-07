@@ -1,0 +1,1 @@
+[field:contentfunction="cn_substr('@me',200)" /]

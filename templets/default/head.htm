@@ -1,0 +1,43 @@
+<div class="header">
+  <div class="header_top">
+    <div class="header_logo">
+      
+        <img src="{dede:global.cfg_templets_skin/}/images/logo.jpg"  alt="{dede:global.cfg_webname/}"/>
+        <!-- <div class="logotext">
+          <p class="manifesto">不动产投资专家</p>
+          <p><a href="#">私募基金牌照：P1009279</a></p>
+        </div> -->
+    </div>
+    <div class="header_right">
+    <div><span>传承集团：</span>
+    <a href="##">传承基金</a>/
+    <a href="http://szcctz.com/">传承基业</a>/
+    <a href="http://szcccf.com/">传承财富</a>/
+    <a href="http://szcctz.com/">传承地产</a>/
+    <a href="http://www.inheritance.com.cn/">传承齿科</a></div>
+      <div class="header_tell">服务热线：<i>400-0696-555</i></div>
+      <!-- <div class="header_search">
+        <form  name="formsearch" action="{dede:global.cfg_cmsurl/}/plus/search.php">
+          <div class="form">
+            <input type="hidden" name="kwtype" value="0" />
+            <input name="q" type="text" class="search-keyword" id="search-keyword" value="在这里搜索..." onfocus="if(this.value=='在这里搜索...'){this.value='';}"  onblur="if(this.value==''){this.value='在这里搜索...';}" />
+            <button type="submit" class="search-submit">搜索</button>
+          </div>
+        </form>
+      </div> -->
+    </div> 
+  </div>
+  <div class="header_nav">
+    <div class="w1060">
+        <ul class="clearfix">
+            <li><a href="/">首页</a><dl class="spe"></dl></li>
+           {dede:channelartlist typeid='top' currentstyle="<li class=hover><a href=~typelink~>~typename~</a></li>"} 
+            <li><a href='{dede:field name='typedir'/}'>{dede:field name='typename'/}</a>
+            <dl class="spe">
+            {dede:channel type='son' noself='true'} 
+         <dd><a href='[field:typeurl/]'>[field:typename/]</a></dd>{/dede:channel}
+            </dl></li>{/dede:channelartlist} 
+        </ul>
+    </div>
+  </div>
+</div>

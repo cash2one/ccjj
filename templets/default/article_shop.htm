@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link href="{dede:global.cfg_templets_skin/}/style/dedecms.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="{dede:global.cfg_templets_skin/}/style/page.css" rel="stylesheet" media="screen" type="text/css" />
+<script src="{dede:global.cfg_templets_skin/}/js/accounting.js"></script>
+</head>
+<body class="productview">
+{dede:include filename="head.htm"/}
+<!-- /header -->
+ 
+ <div class="wrap">
+ <img src="{dede:global.cfg_templets_skin/}/images/{dede:field name='typeid' function="GetTopTypename(@me)" /}.jpg" alt="Image-1" width="100%" height="auto">
+ 	<div class="container1">
+ 		<div class="place">
+        <strong>当前位置:</strong> {dede:field name='position'/}
+        </div>	
+    <div class="shopcontent clearfix">
+    <p class="label">{dede:field.state/}</p>
+    	<h1 class="title">{dede:field.title/}</h1>
+    	<div class="left">
+    	<div class="clearfix">
+    	<div class="center">
+    		<p>募集总额</p>
+    		<p id="jine02" class="c333"></p>
+    	</div>
+    	<div class="center">
+    		<p>预期收益</p>
+    		<p class="ceb4f38">{dede:field.income/}</p>
+    	</div>
+    	<div class="center">
+    		<p>产品期限</p>
+    		<p class="c333">{dede:field.deadline/}</p>
+    	</div>
+    	</div>   
+    	<div class="porgressbar"><span style="width: {dede:field.progress/}%;"></span></div>
+    	<p class="jingdu"><span>募集进度：{dede:field.progress/}%</span><span>剩余可投金额：<span id="jine01"></span></span></p></div>
+        <div class="right">
+        	<p>收益分配方式：{dede:field.distribution/}</p>
+        	<p>托管银行：{dede:field.bank/}</p>
+        	<p>基金管理人：{dede:field.manager01/}</p>
+        	<p>认购起点：{dede:field.origin/}万</p>
+        </div>
+    </div>
+    <div class="shopmain">
+       
+		 <ul class="tabs" id="tabs">
+       <li><a href="#" style="display: block;">基本要素</a></li>
+       <li><a href="#">产品亮点</a></li>
+       <li><a href="#">还款来源</a></li>
+       <li><a href="#">产品进展</a></li>
+    </ul>
+    <ul class="tab_conbox" id="tab_conbox">
+        <li class="tab_con tab-content-active">
+           {dede:field.information/}
+        </li>
+         <li class="tab_con">
+           {dede:field.measure/}
+        </li>   
+        <li class="tab_con">
+           {dede:field.repayment/}
+        </li>
+        <li class="tab_con">
+           {dede:field.portfolio/}
+           <div class="exteriorBox" >
+            <div class="extercon">
+                
+                <div class="forteam">
+                    <div class="leftbox">
+                        <div class="legao"></div>
+                        <ul class="renteam">
+                           <li class="pitchon"><b>募集进度</b></li>
+                           <li><b>成立进度</b></li>
+                           <li><b>项目运作</b></li>
+                           <li><b>退出进度</b></li>
+                        </ul>
+                    </div>
+                    <div class="rightBox">
+                        <div class="renconter" style="display: block;">
+                           {dede:field.collectprogress/}
+                        </div>
+                        <div class="renconter">
+                           {dede:field.establish/}
+                        </div>
+                        <div class="renconter">
+                           {dede:field.projectprogress/}
+                        </div>
+                        <div class="renconter">
+                           {dede:field.exitprogress/}
+                        </div>
+                        <div class="bottomxt"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </li>
+    </ul>
+
+    </div>
+ 	</div>
+   <div style="height: 10px"></div>
+ </div>
+{dede:include filename="footer.htm"/}
+<!-- /footer -->
+
+</body>
+<script src="{dede:global.cfg_templets_skin/}/js/jquery-v1.10.2.js"></script> 
+<script type="text/javascript">
+
+	$(document).ready(function() {
+ 	jQuery.jqtab = function(tabtit,tab_conbox,shijian) {
+		$(tab_conbox).find("tab_conbox li").hide();
+ 		$(tabtit).find("li:first").addClass("thistab").show(); 
+		$(tab_conbox).find("li:first").show();
+	
+		$(tabtit).find("li").bind(shijian,function(){
+		  $(this).addClass("thistab").siblings("li").removeClass("thistab"); 
+ 			var activeindex = $(tabtit).find("li").index(this);
+ 			$(tab_conbox).children().eq(activeindex).show().siblings().hide();
+			return false;
+		});
+	$(".renteam li").mousemove(function(){
+                    var index = $(".renteam li").index($(this));
+                    $(this).siblings().removeClass("pitchon"); 
+                    $(this).addClass("pitchon");
+                    $(".renconter").hide();
+                    $(".renconter").eq(index).show();
+                    
+                 });
+	};
+ 	/*调用方法如下：*/
+	$.jqtab("#tabs","#tab_conbox","click");
+	
+ 	$.jqtab("#tabs2","#tab_conbox2","mouseenter");
+	
+ });
+
+	var zong={dede:field.fundsize/};
+	var jin={dede:field.progress/};
+	var jine=zong-zong*jin*0.01; 
+    document.getElementById('jine02').innerHTML=accounting.formatMoney(zong, "￥ ", 2)+"元";
+    document.getElementById('jine01').innerHTML=accounting.formatMoney(jine, "￥ ", 2)+"元";
+</script>
+</html>
